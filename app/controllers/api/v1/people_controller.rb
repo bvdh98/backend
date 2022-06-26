@@ -18,7 +18,7 @@ class Api::V1::PeopleController < ApplicationController
     @person = Person.new(person_params)
 
     if @person.save
-      render json: @person, status: :created, location: @person
+      render json: @person, status: :created
     else
       render json: @person.errors, status: :unprocessable_entity
     end
